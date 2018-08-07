@@ -1,0 +1,52 @@
+[
+{
+    id: "440000000",
+    parent: "#",
+    text: "广东省",
+    state: {
+        opened: true,
+        disabled: false,
+        selected: false,
+    }
+},
+{
+    id: "440300000",
+    parent: "440000000",
+    text: "深圳市",
+    state: {
+        opened: true,
+        disabled: false,
+        selected: false,
+    }
+},
+{
+    id: "440303000",
+    parent: "440300000",
+    text: "罗湖区",
+    state: {
+        opened: false,
+        disabled: false,
+        selected: false,
+    }
+},
+{
+    id: "440303001",
+    parent: "440303000",
+    text: "桂园街道办事处",
+    state: {
+        opened: false,
+        disabled: false,
+        selected: false,
+    }
+},
+{
+    id: "440304000",
+    parent: "440300000",
+    text: "福田区",
+    state: {
+        opened: false,
+        disabled: false,
+        selected: false,
+    }
+}
+]

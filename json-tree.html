@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>jstree 学习</title>
+  <link rel="stylesheet" href="css/style.min.css">
+</head>
+<body>
+  <div id="jstree">
+  </div>
+</body>
+<script src="js/jquery.min.js"></script>
+<script src="js/jstree.min.js"></script>
+<script>
+  $(function () {
+    var data = [
+{
+    id: "440000000",
+    parent: "#",
+    text: "广东省",
+    state: {
+        opened: true,
+        disabled: false,
+        selected: false,
+    }
+},
+{
+    id: "440304000",
+    parent: "440300000",
+    text: "福田区",
+    state: {
+        opened: false,
+        disabled: false,
+        selected: true,
+    }
+},
+{
+    id: "440300000",
+    parent: "440000000",
+    text: "深圳市",
+    state: {
+        opened: true,
+        disabled: false,
+        selected: false,
+    }
+},
+{
+    id: "440303000",
+    parent: "440300000",
+    text: "罗湖区",
+    state: {
+        opened: false,
+        disabled: false,
+        selected: true,
+    }
+},
+{
+    id: "440303001",
+    parent: "440303000",
+    text: "桂园街道办事处",
+    state: {
+        opened: false,
+        disabled: false,
+        selected: false,
+    }
+}
+];
+    $('#jstree').jstree({
+      "core" : {
+        "themes" : {
+          "variant" : "large"
+        },
+        'data': data,
+        
+      },
+      "checkbox" : {
+        "keep_selected_style" : false
+      },
+        "plugins" : ["wholerow", "checkbox"]
+    });
+
+    $('#jstree').on("changed.jstree", function(e, data) {
+      console.log(data.selected);
+    });
+  });
+</script>
+</html>

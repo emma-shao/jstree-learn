@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>jstree 学习</title>
+  <link rel="stylesheet" href="css/style.min.css">
+</head>
+<body>
+  <div id="jstree">
+    <ul>
+      <li class="jstree-open">广东省
+        <ul id="province">
+          <li class="jstree-open">深圳市
+            <ul id="city">
+              <li>南山区
+                <ul id="district">
+                  <li>科苑</li>
+                  <li>粤海街道</li>
+                </ul>
+              </li>
+              <li class="jstree-open">福田区
+                <ul>
+                  <li data-jstree='{"opened":true, "selected":true}'>福永</li>
+                  <li data-jstree='{"disabled":true}'>岗夏</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>北京</li>
+    </ul>
+  </div>
+</body>
+<script src="js/jquery.min.js"></script>
+<script src="js/jstree.min.js"></script>
+<script>
+  $(function () {
+    $('#jstree').jstree({
+      "core" : {
+        "themes" : {
+          "variant" : "large"
+        }
+      },
+      "checkbox" : {
+        "keep_selected_style" : false
+      },
+      "plugins" : ["wholerow", "checkbox"]
+    });
+    $('#jstree').on("changed.jstree", function(e, data) {
+      console.log(data.selected);
+    });
+  });
+</script>
+</html>

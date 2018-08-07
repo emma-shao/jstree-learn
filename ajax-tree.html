@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>jstree 学习</title>
+  <link rel="stylesheet" href="css/style.min.css">
+</head>
+<body>
+  <div id="jstree">
+  </div>
+</body>
+<script src="js/jquery.min.js"></script>
+<script src="js/jstree.min.js"></script>
+<script>
+$(function () {
+    $('#jstree').jstree({
+      "core" : {
+        "themes" : {
+          "variant" : "large"
+      },
+      "data": {
+        "url" :  'tree.json',
+        "data" : function(node) {
+            return {"id": node.id};
+        }
+        }
+    },
+    "checkbox" : {
+        "keep_selected_style" : false
+    },
+    "plugins" : ["wholerow", "checkbox"]
+    });
+    $('#jstree').on("changed.jstree", function(e, data) {
+      console.log(data.selected);
+  });
+});
+</script>
+</html>
